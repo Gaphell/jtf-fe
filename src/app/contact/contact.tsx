@@ -6,6 +6,7 @@ export interface ContactProps {
 
 const StyledContact = styled.div`
   padding-left: 16px;
+  padding-right: 16px;
   display: flex;
   align-items: end;
   flex-direction: row;

@@ -1,22 +1,51 @@
 import styled from 'styled-components';
 
+import angular from '../../assets/images/angular.svg';
+import django from '../../assets/images/django.svg';
+import figma from '../../assets/images/figma.svg';
+import react from '../../assets/images/react.svg';
+import ror from '../../assets/images/ror.svg';
+
 /* eslint-disable-next-line */
 export interface AboutProps {
 }
 
 const StyledAbout = styled.div`
   padding-left: 16px;
+  padding-right: 16px;
   height: 90vh;
   box-shadow: 0 4px 2px -2px #E2DFD2;
 `;
 
+const StyledImage = styled.img`
+  height: 20px;
+`;
+
+const StyledLink = styled.a`
+  color: orange;
+`;
+
+const StyledBanner = styled.div`
+  margin: 0;
+  padding-top: 8px;
+  //height: 400px;
+  display: flex;
+  justify-content: center;
+`;
+
+const StyledHeader = styled.h1`
+`;
+
+
 export function About(props: AboutProps) {
     return (
         <StyledAbout id={'about'}>
-            <p style={{margin: 0, paddingTop: '8px'}}>
-                JTF is a group of highly experienced professionals with expertise in software development, business
-                process
-                consulting, project management and product management.
+            <StyledBanner>
+                <StyledHeader>Tailored Software Development Services</StyledHeader>
+            </StyledBanner>
+            <p> JTF is a group of highly experienced
+                professionals with expertise in software development
+                business process consulting, project management and product management.
             </p>
             <p>
                 Born and raised in Bhutan, we have been developing and delivering custom softwares for our global
@@ -28,19 +57,34 @@ export function About(props: AboutProps) {
                 Our core technology stacks are:
                 <ul>
                     <li>
-                        <a href={'https://rubyonrails.org/'} target={'_blank'}>Ruby on Rails</a>
+                        <StyledLink href={'https://rubyonrails.org/'} target={'_blank'} rel="noreferrer">
+                            <span>Ruby on Rails </span>
+                            <StyledImage src={ror}/>
+                        </StyledLink>
                     </li>
                     <li>
-                        <a href={'https://www.djangoproject.com/'} target={'_blank'}> Python (Django)</a>
+                        <StyledLink href={'https://www.djangoproject.com/'} target={'_blank'} rel="noreferrer">
+                            <span>Python (Django) </span>
+                            <StyledImage src={django}/>
+                        </StyledLink>
                     </li>
                     <li>
-                        <a href={'https://reactjs.org/'} target={'_blank'}>React</a>
+                        <StyledLink href={'https://reactjs.org/'} target={'_blank'} rel="noreferrer">
+                            <span>React </span>
+                            <StyledImage src={react}/>
+                        </StyledLink>
                     </li>
                     <li>
-                        <a href={'https://angular.io/'} target={'_blank'}>Angular</a>
+                        <StyledLink href={'https://angular.io/'} target={'_blank'} rel="noreferrer">
+                            <span>Angular </span>
+                            <StyledImage src={angular}/>
+                        </StyledLink>
                     </li>
                     <li>
-                        <a href={'https://www.figma.com/'} target={'_blank'}>UX/UI - Figma, HTML, CSS</a>
+                        <StyledLink href={'https://www.figma.com/'} target={'_blank'} rel="noreferrer">
+                            <span>UX/UI - Figma, HTML, CSS </span>
+                            <StyledImage src={figma}/>
+                        </StyledLink>
                     </li>
                 </ul>
             </div>
