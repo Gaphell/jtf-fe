@@ -5,6 +5,8 @@ import django from '../../assets/images/django.svg';
 import figma from '../../assets/images/figma.svg';
 import react from '../../assets/images/react.svg';
 import ror from '../../assets/images/ror.svg';
+import css from '../../assets/images/css.svg';
+import html from '../../assets/images/html.svg';
 
 /* eslint-disable-next-line */
 export interface AboutProps {
@@ -81,9 +83,25 @@ export function About(props: AboutProps) {
                         </StyledLink>
                     </li>
                     <li>
-                        <StyledLink href={'https://www.figma.com/'} target={'_blank'} rel="noreferrer">
-                            <span>UX/UI - Figma, HTML, CSS </span>
-                            <StyledImage src={figma}/>
+                        <StyledLink>
+                            <span>UX/UI - </span>
+                            <ul>
+                                <li>
+                                    <StyledLink href={'https://www.figma.com/'} target={'_blank'}
+                                                rel="noreferrer"> Figma <StyledImage src={figma}/></StyledLink>
+                                </li>
+                                <li>
+                                    <StyledLink href={'https://developer.mozilla.org/en-US/docs/Glossary/HTML5'}
+                                                target={'_blank'}
+                                                rel="noreferrer">HTML <StyledImage src={html}/> </StyledLink>
+                                </li>
+                                <li>
+                                    <StyledLink href={'https://developer.mozilla.org/en-US/docs/Web/CSS'}
+                                                target={'_blank'}
+                                                rel="noreferrer">CSS <StyledImage src={css}/> </StyledLink>
+                                </li>
+                            </ul>
+
                         </StyledLink>
                     </li>
                 </ul>
