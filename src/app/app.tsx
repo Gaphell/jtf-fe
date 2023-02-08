@@ -1,16 +1,27 @@
 import styled from 'styled-components';
-import NxWelcome from './nx-welcome';
+import Header from "../components/header/header";
+import About from "./about/about";
+import Vision from "./vision/vision";
+import Contact from "./contact/contact";
 
 const StyledApp = styled.div`
-  // Your style here
 `;
 
+const StyledContainer = styled.div`
+  background-color: #FAF9F6;
+`
+
 export function App() {
-  return (
-    <StyledApp>
-      <NxWelcome title="jtf-fe" />
-    </StyledApp>
-  );
+    return (
+        <StyledApp>
+            <Header/>
+            <StyledContainer>
+                <About/>
+                <Vision/>
+                <Contact/>
+            </StyledContainer>
+        </StyledApp>
+    );
 }
 
 export default App;
