@@ -7,12 +7,13 @@ export interface AboutProps {
 const StyledAbout = styled.div`
   padding-left: 16px;
   height: 90vh;
+  box-shadow: 0 4px 2px -2px #E2DFD2;
 `;
 
 export function About(props: AboutProps) {
     return (
         <StyledAbout id={'about'}>
-            <p>
+            <p style={{margin: 0, paddingTop: '8px'}}>
                 JTF is a group of highly experienced professionals with expertise in software development, business
                 process
                 consulting, project management and product management.

@@ -12,8 +12,8 @@ const StyledHeader = styled.div`
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: white;
   height: 86px;
+  background-color: white;
 `;
 
 const StyledTab = styled.div`
@@ -45,7 +45,7 @@ const StyledImage = styled.img`
 const Tabs: Array<{ name: string, id: string }> = [
     {name: 'About', id: 'about'},
     {name: 'Vision', id: 'vision'},
-    {name: 'Contact', id: 'contact'}
+    // {name: 'Contact', id: 'contact'}
 ];
 
 const scrollTo = (id: string) => {
@@ -58,7 +58,9 @@ const scrollTo = (id: string) => {
 export function Header(props: HeaderProps) {
     return (
         <StyledHeader>
-            <StyledImage src={logo} alt="logo"/>
+            <a href={'/'}>
+                <StyledImage src={logo} alt="logo"/>
+            </a>
             <StyledTabContainer>
                 {Tabs.map(({name, id}) => <StyledTab key={id} onClick={() => scrollTo(id)}>{name}</StyledTab>)}
             </StyledTabContainer>

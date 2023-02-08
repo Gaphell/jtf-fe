@@ -9,7 +9,13 @@ const StyledApp = styled.div`
 
 const StyledContainer = styled.div`
   background-color: #FAF9F6;
-`
+`;
+
+const StyledFooter = styled.div`
+  justify-content: center;
+  display: flex;
+  padding: 8px 8px 32px 8px;
+`;
 
 export function App() {
     return (
@@ -18,8 +24,13 @@ export function App() {
             <StyledContainer>
                 <About/>
                 <Vision/>
-                <Contact/>
             </StyledContainer>
+            <Contact/>
+            <StyledFooter>
+                <span>© {new Date().getFullYear()} </span>
+                <a href="/"> JTF. </a>
+                <span> All Rights Reserved </span>
+            </StyledFooter>
         </StyledApp>
     );
 }
