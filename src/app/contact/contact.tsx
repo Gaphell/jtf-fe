@@ -13,9 +13,10 @@ const StyledContact = styled.div`
 `;
 
 const StyledContactCard = styled.div`
-  background-color: #FAF9F6;
   padding: 8px;
   border-radius: 8px;
+  text-align: center;
+  color: #e9f5db;
 `;
 
 const StyledAddress = styled.h4`
@@ -26,7 +27,7 @@ export function Contact(props: ContactProps) {
     return (
         <StyledContact id={'contact'}>
             <div style={{width: '100%'}}>
-                <h4>
+                <h4 style={{textAlign: 'center'}}>
                     If you have a requirement for a custom software but don’t know where to start, feel free to contact
                     us to discuss.
                 </h4>

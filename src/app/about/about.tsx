@@ -21,7 +21,7 @@ const StyledImage = styled.img`
   height: 40px;
 `;
 
-const StyledLink = styled.a`
+const StyledTitle = styled.p`
   color: orange;
 `;
 
@@ -31,12 +31,12 @@ const StyledCard = styled.a`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   height: 160px;
   width: 160px;
   transition: all 0.4s ease-out;
   background-color: white;
   box-sizing: border-box;
+  border-radius: 8px;
 
   &:hover {
     cursor: pointer;
@@ -61,8 +61,9 @@ const StyledIntroContainer = styled.div`
   justify-content: center;
 `;
 
-const StyledIntro = styled.h2`
+const StyledIntro = styled.h4`
   text-align: center;
+  color: #e9f5db;
 `;
 
 const TECH_STACKS = [
@@ -105,40 +106,39 @@ const TECH_STACKS = [
 
 export function About(props: AboutProps) {
     return (
-        <div id={'about'} style={{paddingBottom: '200px'}}>
+        <div id={'about'} style={{paddingBottom: '64px'}}>
             <StyledIntroContainer>
                 <StyledIntro> JTF is a group of highly experienced
                     professionals with expertise in software development
                     business process consulting, project management and product management.
                 </StyledIntro>
-                <h3 style={{textAlign: 'center'}}>
+                <StyledIntro>
                     Born and raised in Bhutan, we have been developing and delivering custom softwares for our
                     global
                     clientele
                     in Switzerland, USA and Japan.
-                </h3>
+                </StyledIntro>
             </StyledIntroContainer>
             <StyledAbout>
-                <h3>Our core technology stacks are:</h3>
+                <h2 style={{textAlign: 'center'}}>Our core technology stacks are</h2>
                 <StyledCardContainer>
                     {
                         TECH_STACKS.map(({link, title, image}) => (
-                            <StyledCard href={link}
-                                        target={'_blank'} rel="noreferrer">
+                            <StyledCard href={link} target={'_blank'} rel="noreferrer" key={title}>
                                 <StyledImage src={image}/>
-                                <StyledLink>
+                                <StyledTitle>
                                     {title}
-                                </StyledLink>
+                                </StyledTitle>
                             </StyledCard>
                         ))
                     }
                 </StyledCardContainer>
-                <h4 style={{textAlign: 'center'}}>
+                <StyledIntro>
                     We have delivered projects ranging from a few thousand dollars to hundreds of thousands of dollars.
-                </h4>
-                <h4 style={{textAlign: 'center'}}>
+                </StyledIntro>
+                <StyledIntro>
                     We pride ourselves on our quality and timely delivery.
-                </h4>
+                </StyledIntro>
             </StyledAbout>
         </div>
     );

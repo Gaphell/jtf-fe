@@ -22,6 +22,8 @@ const GlobalStyle = createGlobalStyle`
     line-height: inherit;
     margin: 0;
     height: 100%;
+    color: white;
+    background-color: #121113;
   }
 
   a {
