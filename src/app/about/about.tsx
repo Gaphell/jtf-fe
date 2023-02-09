@@ -15,104 +15,132 @@ export interface AboutProps {
 const StyledAbout = styled.div`
   padding-left: 16px;
   padding-right: 16px;
-  height: 90vh;
-  box-shadow: 0 4px 2px -2px #E2DFD2;
 `;
 
 const StyledImage = styled.img`
-  height: 20px;
+  height: 40px;
 `;
 
 const StyledLink = styled.a`
   color: orange;
 `;
 
-const StyledBanner = styled.div`
-  margin: 0;
-  padding-top: 8px;
-  //height: 400px;
+const StyledCard = styled.a`
   display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  height: 160px;
+  width: 160px;
+  transition: all 0.4s ease-out;
+  background-color: white;
+  box-sizing: border-box;
+
+  &:hover {
+    cursor: pointer;
+    transition: all 0.4s ease-in;
+    transform: scale(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+`;
+
+const StyledCardContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+`;
+
+const StyledIntroContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 `;
 
-const StyledHeader = styled.h1`
+const StyledIntro = styled.h2`
+  text-align: center;
 `;
 
+const TECH_STACKS = [
+    {
+        link: 'https://rubyonrails.org/',
+        title: 'Ruby on Rails',
+        image: ror
+    },
+    {
+        link: 'https://www.djangoproject.com/',
+        title: 'Python (Django)',
+        image: django
+    },
+    {
+        link: 'https://reactjs.org/',
+        title: 'React',
+        image: react
+    },
+    {
+        link: 'https://angular.io/',
+        title: 'Angular',
+        image: angular
+    },
+    {
+        link: 'https://www.figma.com/',
+        title: 'Figma',
+        image: figma
+    },
+    {
+        link: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5',
+        title: 'HTML',
+        image: html
+    },
+    {
+        link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+        title: 'CSS',
+        image: css
+    },
+];
 
 export function About(props: AboutProps) {
     return (
-        <StyledAbout id={'about'}>
-            <StyledBanner>
-                <StyledHeader>Tailored Software Development Services</StyledHeader>
-            </StyledBanner>
-            <p> JTF is a group of highly experienced
-                professionals with expertise in software development
-                business process consulting, project management and product management.
-            </p>
-            <p>
-                Born and raised in Bhutan, we have been developing and delivering custom softwares for our global
-                clientele
-                in Switzerland, USA and Japan.
-            </p>
-
-            <div>
-                Our core technology stacks are:
-                <ul>
-                    <li>
-                        <StyledLink href={'https://rubyonrails.org/'} target={'_blank'} rel="noreferrer">
-                            <span>Ruby on Rails </span>
-                            <StyledImage src={ror}/>
-                        </StyledLink>
-                    </li>
-                    <li>
-                        <StyledLink href={'https://www.djangoproject.com/'} target={'_blank'} rel="noreferrer">
-                            <span>Python (Django) </span>
-                            <StyledImage src={django}/>
-                        </StyledLink>
-                    </li>
-                    <li>
-                        <StyledLink href={'https://reactjs.org/'} target={'_blank'} rel="noreferrer">
-                            <span>React </span>
-                            <StyledImage src={react}/>
-                        </StyledLink>
-                    </li>
-                    <li>
-                        <StyledLink href={'https://angular.io/'} target={'_blank'} rel="noreferrer">
-                            <span>Angular </span>
-                            <StyledImage src={angular}/>
-                        </StyledLink>
-                    </li>
-                    <li>
-                        <StyledLink>
-                            <span>UX/UI - </span>
-                            <ul>
-                                <li>
-                                    <StyledLink href={'https://www.figma.com/'} target={'_blank'}
-                                                rel="noreferrer"> Figma <StyledImage src={figma}/></StyledLink>
-                                </li>
-                                <li>
-                                    <StyledLink href={'https://developer.mozilla.org/en-US/docs/Glossary/HTML5'}
-                                                target={'_blank'}
-                                                rel="noreferrer">HTML <StyledImage src={html}/> </StyledLink>
-                                </li>
-                                <li>
-                                    <StyledLink href={'https://developer.mozilla.org/en-US/docs/Web/CSS'}
-                                                target={'_blank'}
-                                                rel="noreferrer">CSS <StyledImage src={css}/> </StyledLink>
-                                </li>
-                            </ul>
-
-                        </StyledLink>
-                    </li>
-                </ul>
-            </div>
-            <p>
-                We have delivered projects ranging from a few thousand dollars to hundreds of thousands of dollars.
-            </p>
-            <p>
-                We pride ourselves on our quality and timely delivery.
-            </p>
-        </StyledAbout>
+        <div id={'about'} style={{paddingBottom: '200px'}}>
+            <StyledIntroContainer>
+                <StyledIntro> JTF is a group of highly experienced
+                    professionals with expertise in software development
+                    business process consulting, project management and product management.
+                </StyledIntro>
+                <h3 style={{textAlign: 'center'}}>
+                    Born and raised in Bhutan, we have been developing and delivering custom softwares for our
+                    global
+                    clientele
+                    in Switzerland, USA and Japan.
+                </h3>
+            </StyledIntroContainer>
+            <StyledAbout>
+                <h3>Our core technology stacks are:</h3>
+                <StyledCardContainer>
+                    {
+                        TECH_STACKS.map(({link, title, image}) => (
+                            <StyledCard href={link}
+                                        target={'_blank'} rel="noreferrer">
+                                <StyledImage src={image}/>
+                                <StyledLink>
+                                    {title}
+                                </StyledLink>
+                            </StyledCard>
+                        ))
+                    }
+                </StyledCardContainer>
+                <h4 style={{textAlign: 'center'}}>
+                    We have delivered projects ranging from a few thousand dollars to hundreds of thousands of dollars.
+                </h4>
+                <h4 style={{textAlign: 'center'}}>
+                    We pride ourselves on our quality and timely delivery.
+                </h4>
+            </StyledAbout>
+        </div>
     );
 }
 

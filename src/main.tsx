@@ -4,8 +4,6 @@ import * as ReactDOM from 'react-dom/client';
 import App from './app/app';
 import { createGlobalStyle } from "styled-components";
 
-import background from './assets/images/background.jpg';
-
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
@@ -16,14 +14,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'M PLUS Rounded 1c', sans-serif;
     line-height: 1.5;
     scroll-behavior: smooth;
+    height: 100%;
   }
 
   body {
     font-family: inherit;
     line-height: inherit;
     margin: 0;
-    background-image: linear-gradient(to bottom, rgba(256, 256, 256, 0.98), rgba(256, 256, 256, 0.92)), url('${background}');
-    background-size: contain;
+    height: 100%;
   }
 
   a {

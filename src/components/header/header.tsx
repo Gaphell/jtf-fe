@@ -57,13 +57,12 @@ const StyledImage = styled.img`
 const Tabs: Array<{ name: string, id: string }> = [
     {name: 'About', id: 'about'},
     {name: 'Vision', id: 'vision'},
-    // {name: 'Contact', id: 'contact'}
 ];
 
 const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-        window.scroll({top: (element.offsetTop - 96), behavior: 'smooth'});
+        window.scroll({top: (element.offsetTop - 250), behavior: 'smooth'});
     }
 }
 

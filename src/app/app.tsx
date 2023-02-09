@@ -16,11 +16,29 @@ const StyledFooter = styled.div`
   padding: 8px;
 `;
 
+const StyledBanner = styled.div`
+  margin: 0;
+  padding-top: 8px;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffe0;
+  position: sticky;
+  top: 96px;
+  z-index: 1000;
+`;
+
+const StyledHeader = styled.h1`
+  text-align: center;
+`;
+
 export function App() {
     return (
         <StyledApp>
             <Header/>
             <StyledContainer>
+                <StyledBanner>
+                    <StyledHeader>Tailored Software Development Services</StyledHeader>
+                </StyledBanner>
                 <About/>
                 <Vision/>
                 <Contact/>
