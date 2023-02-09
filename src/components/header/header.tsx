@@ -60,7 +60,7 @@ const Tabs: Array<{ name: string, id: string }> = [
 const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-        window.scroll({top: (element.offsetTop - 250), behavior: 'smooth'});
+        window.scroll({top: (element.offsetTop - 350), behavior: 'smooth'});
     }
 }
 

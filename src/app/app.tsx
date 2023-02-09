@@ -4,7 +4,7 @@ import About from "./about/about";
 import Vision from "./vision/vision";
 import Contact from "./contact/contact";
 
-import background from '../assets/images/background.jpg';
+import background from '../assets/images/bg1.jpg';
 
 const StyledApp = styled.div`
 `;
@@ -39,6 +39,14 @@ const StyledHeader = styled.h1`
   color: white;
 `;
 
+const StyledCompanyName = styled.a`
+  color: #e9f5db;
+
+  &:hover {
+    color: orange;
+  }
+`;
+
 export function App() {
     return (
         <StyledApp>
@@ -54,7 +62,7 @@ export function App() {
             <StyledFooter>
                 <p>
                     <span>© {new Date().getFullYear()} </span>
-                    <a href="/"> JTF. </a>
+                    <StyledCompanyName href="/"> JTF. </StyledCompanyName>
                     <span> All Rights Reserved </span>
                 </p>
             </StyledFooter>

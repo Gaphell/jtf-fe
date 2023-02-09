@@ -21,7 +21,15 @@ const StyledContactCard = styled.div`
 
 const StyledAddress = styled.h4`
   font-weight: bold;
-`
+`;
+
+const StyledEmail = styled.a`
+  color: #e9f5db;
+
+  &:hover {
+    color: orange;
+  }
+`;
 
 export function Contact(props: ContactProps) {
     return (
@@ -34,8 +42,9 @@ export function Contact(props: ContactProps) {
                 <StyledContactCard>
                     <StyledAddress>Address: Hankyu lam 2-4, Upper Taba, Thimphu Bhutan </StyledAddress>
                     <StyledAddress>Phone: +975-77113336</StyledAddress>
-                    <StyledAddress>Email: <a
-                        href={'mailto:kesang.ytw@gmail.com'}>kesang.ytw@gmail.com</a></StyledAddress>
+                    <StyledAddress>Email:
+                        <StyledEmail
+                            href={'mailto:kesang.ytw@gmail.com'}>kesang.ytw@gmail.com</StyledEmail></StyledAddress>
                 </StyledContactCard>
             </div>
         </StyledContact>
